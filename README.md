@@ -71,9 +71,9 @@ y=np.array([723, 2032, 33.54345)])
 
 
 Following the section "Neural Networks" in the "Building AI" course, we will train a network with the data from x:
-* Input nodes: With the reduced sample data set, we have three input nodes (node1=ac_pitch_min, node2=ac_pitch_max, node3=ac_loudness_mean)
-* Hidden layers: In the hidden layers we apply a logistic regression function and a sigmoid function; we might also add a bias node
-* Output layer: Here, we will get the information on which emotion category to select. The output will be a number between 0 and 3 which defines the emotion.
+* Input layer: With the reduced sample data set, we have 3x5=15 input nodes: 3 phonetic properties (ac_pitch_min, ac_pitch_max, ac_loudness_mean) with 5 samples each
+* Hidden layer: In the hidden layers we apply a logistic regression function and a sigmoid function; biases and weights are specified here
+* Output layer: this layer reveals the information on which emotion category to select. There will be 4 output neurons in the output layer, one neuron for each potential emotion. The sigmoid function from the hidden layer passes a number between 0 and 1 over to the output layer neurons. The neuron with the highest value will fire and therefore inform us about the detected emotion of a speech sample. Neuron1 will fire, if the detected emotion is 'neutral', neuron2 fires if 'sad' is detected, neuron3 for 'happy', and neuron4 if the test input was identified as 'angry'.
 
 If successfully analyzed, the test data string with its newly added emotion category will be added to the training data to further improve the model.
 
